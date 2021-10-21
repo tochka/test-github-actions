@@ -1,0 +1,21 @@
+name: alarm
+
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types: [completed]
+    conclusion: "failure"
+    branches:
+      - master
+      - staging
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Send to slack channel
+    steps:
+      - name: Check env variable
+        run: echo $SECRET_VAR
+      - name: send message
+        run: echo "send message"

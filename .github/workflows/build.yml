@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  pull_request:
+    branches:
+      - "*"
+  push:
+    branches:
+      - "master"
+
+env:
+  SECRET_VAR: 123
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: build
+        run: sleep(10)
