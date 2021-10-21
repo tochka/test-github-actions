@@ -17,6 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: print secret var
+        run: echo $SECRET_VAR
       - name: build
         uses: jakejarvis/wait-action@master
         with:
