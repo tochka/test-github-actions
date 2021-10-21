@@ -1,4 +1,4 @@
-name: Build
+name: build
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - "*"
   push:
     branches:
-      - "master"
+      - "main"
 
 env:
   SECRET_VAR: 123

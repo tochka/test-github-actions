@@ -6,7 +6,7 @@ on:
     types: [completed]
     conclusion: "failure"
     branches:
-      - master
+      - main
       - staging
       - develop
 
