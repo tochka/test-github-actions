@@ -24,3 +24,5 @@ jobs:
         uses: jakejarvis/wait-action@master
         with:
           time: "10s"
+      - name: mark failure
+        run: exit 1
