@@ -11,11 +11,6 @@ on:
 
 jobs:
   notify:
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
-    name: Send to slack channel
     steps:
-      - name: Check env variable
-        run: echo $SECRET_VAR
-      - name: send message
-        run: echo "send message"
+      - run: exit 1

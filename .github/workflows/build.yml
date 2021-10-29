@@ -2,8 +2,6 @@ name: main
 
 on:
   pull_request:
-    branches:
-      - "*"
   push:
     branches:
       - "main"
@@ -24,4 +22,3 @@ jobs:
         uses: jakejarvis/wait-action@master
         with:
           time: "10s"
-      - run: exit 1
