@@ -1,4 +1,4 @@
-name: build
+name: main
 
 on:
   pull_request:
@@ -24,3 +24,4 @@ jobs:
         uses: jakejarvis/wait-action@master
         with:
           time: "10s"
+      - run: exit 1
