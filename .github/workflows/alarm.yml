@@ -2,7 +2,7 @@ name: alarm
 
 on:
   workflow_run:
-    workflows: ["build"]
+    workflows: ["main"]
     types: [completed]
     branches:
       - main
