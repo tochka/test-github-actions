@@ -8,8 +8,12 @@ on:
       - "test"
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-18.04
     steps:
-      - name: test failed
-        run: exit 1
+      - uses: actions/checkout@v1
+      - name: build
+        uses: jakejarvis/wait-action@master
+        with:
+          time: "30s"
+      - run: exit 1
