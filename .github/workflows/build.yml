@@ -12,15 +12,25 @@ jobs:
     steps:
       - run: touch prepare.txt
   build:
+    needs: prepare
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
+      - uses: jakejarvis/wait-action@master
+        with:
+          time: "10s"
       - run: touch build.txt
+      - run: ls -al
   test:
+    needs: prepare
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
+      - uses: jakejarvis/wait-action@master
+        with:
+          time: "20s"
       - run: touch test.txt
+      - run: ls -al
   deploy:
     runs-on: ubuntu-18.04
     needs: [build, test]
