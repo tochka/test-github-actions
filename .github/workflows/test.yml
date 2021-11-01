@@ -1,0 +1,15 @@
+name: test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "main"
+      - "test"
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: test failed
+        run: exit 1
