@@ -7,11 +7,22 @@ on:
       - "main"
       - "test"
 jobs:
+  prepare:
+    runs-on: ubuntu-18.04
+    steps:
+      - run: touch prepare.txt
   build:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
-      - name: build
-        uses: jakejarvis/wait-action@master
-        with:
-          time: "10s"
+      - run: touch build.txt
+  test:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - run: touch test.txt
+  deploy:
+    runs-on: ubuntu-18.04
+    needs: [build, test]
+    steps:
+      - run: ls -al
